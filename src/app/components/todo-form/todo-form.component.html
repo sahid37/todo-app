@@ -1,0 +1,20 @@
+
+<div class="input-group mb-3 w-100">
+    <input
+      type="text"
+      name="todo"
+      placeholder="Enter a todo"
+      class="form-control"
+      [(ngModel)]="todoTitle"
+      #todoInput="ngModel"
+    />
+    <div class="input-group-append">
+      <button (click)="handleAdd()" class="btn btn-primary" [disabled]="!todoInput.valid">
+        Add Todo
+      </button>
+    </div>
+    <div *ngIf="!todoInput.valid && todoInput.touched" class="alert alert-danger">
+      Please enter a todo title!
+    </div>
+  </div>
+  
